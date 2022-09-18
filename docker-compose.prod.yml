@@ -1,0 +1,17 @@
+version: "3"
+services:
+    react-app:
+      # stdin_open: true
+      # tty: true
+      build:
+        context: .
+        dockerfile: Dockerfile.prod
+        args:
+          - REACT_APP_NAME=kiwonkim-compose-prod
+      ports:
+        - "8000:80"
+      environment:
+        - REACT_APP_NAME=kiwonkim_compose-prod
+        - CHOKIDAR_USEPOLLING=true
+      # env_file:
+      #   - ./.env
